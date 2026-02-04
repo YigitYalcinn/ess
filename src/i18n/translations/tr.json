@@ -1,0 +1,104 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünlerimiz",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Eray Ship Supply",
+    "subtitle": "Gemi Tedarik ve Hırdavat Çözümleri",
+    "description": "İstanbul'un Tuzla ilçesinde, gemi tedarik (ship supply), cıvata ve hırdavat alanlarında uzmanlaşmış ekibimizle, her türlü denizcilik malzemesi ve teknik ekipman için güvenilir çözüm ortağınız.",
+    "badge": "Premium Ship Supply",
+    "scroll": "Kaydır",
+    "cta": "Bize Ulaşın"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Eray Ship Supply: Çözüm Odaklı Denizcilik Tedariki",
+    "description": "Tuzla Gemi Tedarik sektörünün köklü kuruluşlarından biri olan Eray Ship Supply, Tuzla tersaneler bölgesindeki stratejik konumu ve geniş ürün yelpazesiyle denizcilik endüstrisine değer katmaktadır. Tuzla Cıvata ve Hırdavat alanındaki uzmanlığımız, ship supply hizmetlerindeki hızımızla birleşerek gemi bakım, onarım ve donatım süreçlerinizi kusursuz hale getirir. Her türlü bağlantı elemanı ve teknik malzeme ihtiyacınızda, güvenilir iş ortağınız olarak yanınızdayız.",
+    "experience": {
+      "title": "Deneyim",
+      "text": "Sektörde Yılların Tecrübesi ve Güveni"
+    },
+    "quality": {
+      "title": "Kalite",
+      "text": "Yüksek Standartlarda Ürün Tedariki"
+    },
+    "service": {
+      "title": "Hizmet",
+      "text": "7/24 Kesintisiz Lojistik Destek"
+    }
+    ,
+    "location_word": "Tuzla",
+    "reliability_word": "güvenilirlik",
+    "quality_word": "kalite",
+    "description2": "{{location}} bölgesinde faaliyet gösteren firmamız, denizcilik sektöründe {{reliability}} ve {{quality}} standartlarını en üst seviyede tutmaktadır."
+  },
+  
+  "brands": {
+    "title": "Çalıştığımız Markalar",
+    "subtitle": "Sektör Standartları ve Güvenilir İş Ortaklarımız",
+    "note": "Askaynak, Baymax, Beybi, Bosch, Dewalt, İzeltaş, Ingco, Karbosan, Stanley, Starline ve daha fazlası..."
+  },
+  "products": {
+    "title": "Ürünlerimiz",
+    "subtitle": "Gemi Tedarik ve Hırdavat Ürün Yelpazesi",
+    "categories": {
+      "fasteners": {
+        "title": "Bağlantı Elemanları",
+        "description": "Cıvata, vida, somun, rondela ve tüm bağlantı elemanları - Eray Cıvata köklü tecrübesi"
+      },
+      "hand_tools": {
+        "title": "El Aletleri",
+        "description": "Profesyonel el aletleri, ölçüm aletleri ve yardımcı ekipmanlar"
+      },
+      "safety": {
+        "title": "Safety Ürünleri",
+        "description": "İş güvenliği ekipmanları, koruyucu malzemeler ve güvenlik donanımları"
+      },
+      "cleaning": {
+        "title": "Temizlik Ürünleri",
+        "description": "Endüstriyel temizlik malzemeleri, kimyasallar ve bakım ürünleri"
+      },
+      "deck_equipment": {
+        "title": "Güverte Ekipmanları",
+        "description": "Güverte malzemeleri, denizcilik ekipmanları ve gemi donanımları"
+      }
+    },
+    "all": "Tümü",
+    "details": "Detayları Gör"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Bize Ulaşın",
+    "info": {
+      "address": "Adres",
+      "phone": "Telefon",
+      "email": "E-posta",
+      "hours": "Çalışma Saatleri"
+    },
+    "whatsapp": "WhatsApp'tan Yaz",
+    "quick_call": "Hemen Ara",
+    "quick_mail": "E-posta Gönder",
+    "form": {
+      "name": "Adınız Soyadınız",
+      "email": "E-posta Adresiniz",
+      "phone": "Telefon Numaranız",
+      "message": "Mesajınız",
+      "send": "Gönder",
+      "sent_message": "Mesajınız alındı! En kısa sürede size dönüş yapacağız."
+    },
+    "address_text": "Evliya Çelebi, Peker Sk. No: 24/1, 34944 Tuzla/İstanbul",
+    "hours_text": "Pazartesi - Cumartesi: 08:00 - 18:00"
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "description": "Tuzla'nın güvenilir gemi tedarik ve hırdavat firması"
+  },
+  "seo": {
+    "title": "Eray Ship Supply - Tuzla Ship Supply | Tuzla Gemi Tedarik | Tuzla Hırdavat | Tuzla Cıvata",
+    "description": "Tuzla Ship Supply, Tuzla Gemi Tedarik, Tuzla Hırdavat, Tuzla Cıvata ve gemi malzemeleri alanında lider firma. Tuzla'da 7/24 gemi tedarik, bağlantı elemanları, teknik malzeme ve hırdavat çözümleri. Ship Chandler Tuzla, Tuzla gemi malzemeleri, Tuzla cıvata ve hırdavat için güvenilir adres.",
+    "keywords": "tuzla ship supply, tuzla gemi tedarik, tuzla hırdavat, tuzla cıvata, tuzla gemi malzemeleri, ship chandler tuzla, tuzla bağlantı elemanları, tuzla teknik malzeme, tuzla ship chandler, tuzla ship hardware, tuzla ship fasteners, tuzla ship bolts, tuzla ship nuts, tuzla ship screws, tuzla ship washers, tuzla ship equipment, tuzla ship tools, tuzla ship chandlery, tuzla ship supply company, tuzla ship supply turkey, tuzla ship supply istanbul"
+  }
+}

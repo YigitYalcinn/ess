@@ -1,0 +1,102 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "products": "Products",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Eray Ship Supply",
+        "subtitle": "Ship Supply & Hardware Solutions",
+        "description": "Based in the Tuzla district of Istanbul, our expert team specializes in ship supply, fasteners, and hardware. We are your trusted partner for all kinds of marine materials and technical equipment.",
+        "badge": "Premium Ship Supply",
+        "scroll": "Scroll",
+        "cta": "Contact Us"
+    },
+    "about": {
+        "title": "About Us",
+        "subtitle": "Your Trusted Partner in Maritime Industry",
+        "description": "Eray Ship Supply is one of the leading companies in the Tuzla Ship Supply sector, located in the strategic Tuzla shipyard region of Istanbul. With our wide product range and expertise in fasteners and hardware, we add value to the maritime industry. We are your reliable partner for all kinds of connection elements and technical materials, combining our speed in ship supply services with our experience in the field. Our company operating in the Tuzla area maintains the highest standards of reliability and quality in the maritime sector.",
+        "experience": {
+            "title": "Experience",
+            "text": "Years of industry expertise"
+        },
+        "quality": {
+            "title": "Quality",
+            "text": "International standard products"
+        },
+        "service": {
+            "title": "Service",
+            "text": "24/7 fast supply and support"
+        },
+        "location_word": "Tuzla",
+        "reliability_word": "reliability",
+        "quality_word": "quality",
+        "description2": "Our company operating in the {{location}} area maintains the highest standards of {{reliability}} and {{quality}} in the maritime sector."
+    },
+    "brands": {
+        "title": "Our Brand Partners",
+        "subtitle": "Industry Standards and Trusted Partners",
+        "note": "Askaynak, Baymax, Beybi, Bosch, Dewalt, İzeltaş, Ingco, Karbosan, Stanley, Starline and more..."
+    },
+    "products": {
+        "title": "Our Products",
+        "subtitle": "Ship Supply & Hardware Product Range",
+        "categories": {
+            "fasteners": {
+                "title": "Fasteners",
+                "description": "Bolts, screws, nuts, washers and all fastening elements - Eray Cıvata heritage"
+            },
+            "hand_tools": {
+                "title": "Hand Tools",
+                "description": "Professional hand tools, measuring instruments and auxiliary equipment"
+            },
+            "safety": {
+                "title": "Safety Products",
+                "description": "Occupational safety equipment, protective materials and safety gear"
+            },
+            "cleaning": {
+                "title": "Cleaning Products",
+                "description": "Industrial cleaning materials, chemicals and maintenance products"
+            },
+            "deck_equipment": {
+                "title": "Deck Equipment",
+                "description": "Deck materials, marine equipment and ship fittings"
+            }
+        },
+        "all": "All",
+        "details": "View Details"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Get in Touch",
+        "info": {
+            "address": "Address",
+            "phone": "Phone",
+            "email": "Email",
+            "hours": "Working Hours"
+        },
+        "whatsapp": "WhatsApp Us",
+        "quick_call": "Call Now",
+        "quick_mail": "Send Email",
+        "form": {
+            "name": "Your Name",
+            "email": "Your Email",
+            "phone": "Your Phone",
+            "message": "Your Message",
+            "send": "Send",
+            "sent_message": "Your message has been received! We will get back to you shortly."
+        },
+        "address_text": "Evliya Çelebi, Peker Sk. No: 24/1, 34944 Tuzla/İstanbul",
+        "hours_text": "Monday - Saturday: 08:00 - 18:00"
+    },
+    "footer": {
+        "rights": "All rights reserved.",
+        "description": "Trusted ship supply and hardware company in Tuzla"
+    },
+    "seo": {
+           "title": "Eray Ship Supply - Tuzla Ship Supply | Tuzla Marine Supply | Tuzla Hardware | Tuzla Fasteners | Tuzla Bolts | Tuzla Nuts | Tuzla Screws | Tuzla Washers",
+           "description": "Tuzla Ship Supply, Tuzla Marine Supply, Tuzla Hardware, Tuzla Fasteners, Tuzla Bolts, Tuzla Nuts, Tuzla Screws, Tuzla Washers and marine equipment leader. 24/7 ship supply, fasteners, technical materials and hardware solutions in Tuzla. Ship Chandler Tuzla, Tuzla marine equipment, Tuzla fasteners and hardware for all your needs.",
+           "keywords": "tuzla ship supply, tuzla marine supply, tuzla hardware, tuzla fasteners, tuzla bolts, tuzla nuts, tuzla screws, tuzla washers, ship chandler tuzla, tuzla ship chandler, tuzla ship hardware, tuzla ship fasteners, tuzla ship bolts, tuzla ship nuts, tuzla ship screws, tuzla ship washers, tuzla ship equipment, tuzla ship tools, tuzla ship chandlery, tuzla ship supply company, tuzla ship supply turkey, tuzla ship supply istanbul"
+    }
+}

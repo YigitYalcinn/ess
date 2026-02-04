@@ -1,0 +1,104 @@
+{
+    "nav": {
+        "home": "Главная",
+        "about": "О нас",
+        "products": "Продукция",
+        "contact": "Контакты"
+    },
+    "hero": {
+        "title": "Eray Ship Supply",
+        "subtitle": "Снабжение судов и скобяные изделия",
+        "description": "Наша команда специалистов работает в районе Тузла (Стамбул) и специализируется на судовом снабжении, крепеже и скобяных изделиях. Мы — ваш надежный партнер по всем видам морских материалов и технического оборудования.",
+        "badge": "Премиум Ship Supply",
+        "scroll": "Прокрутить",
+        "cta": "Связаться с нами"
+    },
+    "about": {
+        "title": "О нас - Лидер Tuzla Ship Supply",
+        "subtitle": "Eray Ship Supply: Решения Tuzla Gemi Tedarik и Крепеж",
+        "description": "Eray Ship Supply — одна из ведущих компаний в секторе Tuzla Ship Supply, расположенная в стратегическом районе верфей Тузлы (Стамбул). Благодаря широкому ассортименту и опыту в области крепежа и скобяных изделий, мы вносим вклад в развитие морской отрасли. Мы — ваш надежный партнер по всем видам соединительных элементов и технических материалов, объединяя скорость судового снабжения с многолетним опытом. Наша компания, действующая в районе Тузла, поддерживает высочайшие стандарты надежности и качества в морской отрасли.",
+        "experience": {
+            "title": "Опыт",
+            "text": "Многолетний опыт в секторе Tuzla Ship Supply"
+        },
+        "quality": {
+            "title": "Качество",
+            "text": "Лидер стандартов Tuzla Cıvata и Hırdavat"
+        },
+        "service": {
+            "title": "Сервис",
+            "text": "Быстрое обслуживание Tuzla Ship Supply 24/7"
+        }
+        ,
+        "location_word": "Тузла",
+        "reliability_word": "надежность",
+        "quality_word": "качество",
+        "description2": "Наша компания, действующая в районе {{location}}, поддерживает высочайшие стандарты {{reliability}} и {{quality}} в морской отрасли."
+    },
+    
+    "brands": {
+        "title": "Наши партнеры",
+        "subtitle": "Отраслевые стандарты и надежные партнеры",
+        "note": "Askaynak, Baymax, Beybi, Bosch, Dewalt, İzeltaş, Ingco, Karbosan, Stanley, Starline и другие..."
+    },
+    "products": {
+        "title": "Наша продукция",
+        "subtitle": "Ассортимент судового снабжения и скобяных изделий",
+        "categories": {
+            "fasteners": {
+                "title": "Крепежные элементы",
+                "description": "Болты, винты, гайки, шайбы и все крепежные элементы - наследие Eray Cıvata"
+            },
+            "hand_tools": {
+                "title": "Ручные инструменты",
+                "description": "Профессиональные ручные инструменты, измерительные приборы и вспомогательное оборудование"
+            },
+            "safety": {
+                "title": "Продукция безопасности",
+                "description": "Оборудование для охраны труда, защитные материалы и средства безопасности"
+            },
+            "cleaning": {
+                "title": "Чистящие средства",
+                "description": "Промышленные чистящие материалы, химикаты и средства для обслуживания"
+            },
+            "deck_equipment": {
+                "title": "Палубное оборудование",
+                "description": "Палубные материалы, морское оборудование и судовая арматура"
+            }
+        },
+        "all": "Все",
+        "details": "Подробнее"
+    },
+    "contact": {
+        "title": "Контакты",
+        "subtitle": "Свяжитесь с нами",
+        "info": {
+            "address": "Адрес",
+            "phone": "Телефон",
+            "email": "Эл. почта",
+            "hours": "Часы работы"
+        },
+        "whatsapp": "Написать в WhatsApp",
+        "quick_call": "Позвонить сейчас",
+        "quick_mail": "Отправить email",
+        "form": {
+            "name": "Ваше имя",
+            "email": "Ваш email",
+            "phone": "Ваш телефон",
+            "message": "Ваше сообщение",
+            "send": "Отправить",
+            "sent_message": "Ваше сообщение получено! Мы свяжемся с вами в ближайшее время."
+        },
+        "address_text": "Evliya Çelebi, Peker Sk. No: 24/1, 34944 Tuzla/İstanbul",
+        "hours_text": "Понедельник - Суббота: 08:00 - 18:00"
+    },
+    "footer": {
+        "rights": "Все права защищены.",
+        "description": "Надежная компания Tuzla Gemi Tedarik и Hırdavat"
+    },
+    "seo": {
+        "title": "Eray Ship Supply - Tuzla Ship Supply | Tuzla Gemi Tedarik | Tuzla Hırdavat | Tuzla Cıvata | Tuzla Ship Chandler | Tuzla Болты | Tuzla Гайки | Tuzla Винты | Tuzla Шайбы",
+        "description": "Tuzla Ship Supply, Tuzla Gemi Tedarik, Tuzla Hırdavat, Tuzla Cıvata и морские материалы. Лидер в поставках судового оборудования, крепежа, технических материалов и скобяных изделий в Тузле. Ship Chandler Tuzla, Tuzla судовые материалы, Tuzla болты, гайки, винты и шайбы.",
+        "keywords": "tuzla ship supply, tuzla gemi tedarik, tuzla hırdavat, tuzla cıvata, tuzla ship chandler, tuzla болты, tuzla гайки, tuzla винты, tuzla шайбы, судовое снабжение тузла, судовые материалы тузла, ship chandler tuzla, tuzla marine supply, tuzla hardware, tuzla fasteners, tuzla bolts, tuzla nuts, tuzla screws, tuzla washers, tuzla ship equipment, tuzla ship tools, tuzla ship chandlery, tuzla ship supply company, tuzla ship supply turkey, tuzla ship supply istanbul"
+    }
+}
