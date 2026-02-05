@@ -7,8 +7,8 @@
   },
   "hero": {
     "title": "Eray Ship Supply",
-    "subtitle": "Gemi Tedarik ve Hırdavat Çözümleri",
-    "description": "İstanbul'un Tuzla ilçesinde, gemi tedarik (ship supply), cıvata ve hırdavat alanlarında uzmanlaşmış ekibimizle, her türlü denizcilik malzemesi ve teknik ekipman için güvenilir çözüm ortağınız.",
+    "subtitle": "Gemi Tedarik, Bakım, Onarım, Hırdavat, Nakliye Çözümleri",
+    "description": "Kalitenin Hizmetle Buluştuğu Tek Adres",
     "badge": "Premium Ship Supply",
     "scroll": "Kaydır",
     "cta": "Bize Ulaşın"
@@ -42,8 +42,8 @@
     "note": "Askaynak, Baymax, Beybi, Bosch, Dewalt, İzeltaş, Ingco, Karbosan, Stanley, Starline ve daha fazlası..."
   },
   "products": {
-    "title": "Ürünlerimiz",
-    "subtitle": "Gemi Tedarik ve Hırdavat Ürün Yelpazesi",
+    "title": "Ürünlerimiz ve Hizmetlerimiz",
+    "subtitle": "Gemi tedarik, bakım, onarım ve teknik hizmet kapsamı",
     "categories": {
       "fasteners": {
         "title": "Bağlantı Elemanları",
@@ -64,6 +64,38 @@
       "deck_equipment": {
         "title": "Güverte Ekipmanları",
         "description": "Güverte malzemeleri, denizcilik ekipmanları ve gemi donanımları"
+      },
+      "welding": {
+        "title": "Kaynak Ürünleri",
+        "description": "Kaynak makineleri, sarf malzemeleri ve uygulama ekipmanları"
+      },
+      "crane_service": {
+        "title": "Vinç Tamir, Onarım ve Bakım",
+        "description": "Vinç sistemleri için bakım, arıza ve revizyon çözümleri"
+      },
+      "manhole_covers": {
+        "title": "Menhol Kapak İmalatı",
+        "description": "Özel ölçü menhol kapak üretimi ve montaj çözümleri"
+      },
+      "ship_chemicals": {
+        "title": "Gemi Kimyasalları",
+        "description": "Temizlik, bakım ve koruma amaçlı denizcilik kimyasalları"
+      },
+      "hydraulic": {
+        "title": "Hidrolik Ekipmanlar",
+        "description": "Hidrolik pompalar, hortumlar, bağlantılar ve aksesuarlar"
+      },
+      "valves_pipes": {
+        "title": "Valf, Vana ve Boru Çeşitleri",
+        "description": "Farklı çap ve tipte valf, vana ve boru ürünleri"
+      },
+      "electrical": {
+        "title": "Elektrik Ürünleri",
+        "description": "Kablo, priz, pano ve elektriksel sarf malzemeleri"
+      },
+      "cnc_lathe": {
+        "title": "Özel Torna ve CNC İşlemleri",
+        "description": "İhtiyaca özel parça üretimi ve hassas işleme çözümleri"
       }
     },
     "all": "Tümü",

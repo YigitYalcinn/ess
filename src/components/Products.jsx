@@ -1,7 +1,22 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBolt, FaTools, FaShieldAlt, FaBox, FaWrench, FaSprayCan, FaAnchor } from 'react-icons/fa';
+import {
+    FaBolt,
+    FaTools,
+    FaShieldAlt,
+    FaBox,
+    FaSprayCan,
+    FaAnchor,
+    FaFire,
+    FaCogs,
+    FaIndustry,
+    FaVials,
+    FaTint,
+    FaProjectDiagram,
+    FaPlug,
+    FaDraftingCompass
+} from 'react-icons/fa';
 import './Products.css';
 
 const Products = () => {
@@ -14,7 +29,15 @@ const Products = () => {
         { id: 'hand_tools', icon: <FaTools />, name: t('products.categories.hand_tools.title') },
         { id: 'safety', icon: <FaShieldAlt />, name: t('products.categories.safety.title') },
         { id: 'cleaning', icon: <FaSprayCan />, name: t('products.categories.cleaning.title') },
-        { id: 'deck_equipment', icon: <FaAnchor />, name: t('products.categories.deck_equipment.title') }
+        { id: 'deck_equipment', icon: <FaAnchor />, name: t('products.categories.deck_equipment.title') },
+        { id: 'welding', icon: <FaFire />, name: t('products.categories.welding.title') },
+        { id: 'crane_service', icon: <FaCogs />, name: t('products.categories.crane_service.title') },
+        { id: 'manhole_covers', icon: <FaIndustry />, name: t('products.categories.manhole_covers.title') },
+        { id: 'ship_chemicals', icon: <FaVials />, name: t('products.categories.ship_chemicals.title') },
+        { id: 'hydraulic', icon: <FaTint />, name: t('products.categories.hydraulic.title') },
+        { id: 'valves_pipes', icon: <FaProjectDiagram />, name: t('products.categories.valves_pipes.title') },
+        { id: 'electrical', icon: <FaPlug />, name: t('products.categories.electrical.title') },
+        { id: 'cnc_lathe', icon: <FaDraftingCompass />, name: t('products.categories.cnc_lathe.title') }
     ];
 
     const products = [
@@ -40,7 +63,7 @@ const Products = () => {
             title: t('products.categories.safety.title'),
             description: t('products.categories.safety.description'),
             icon: <FaShieldAlt size={40} />,
-            image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80'
+            image: '/images/safety.jpg'
         },
         {
             id: 4,
@@ -48,7 +71,7 @@ const Products = () => {
             title: t('products.categories.cleaning.title'),
             description: t('products.categories.cleaning.description'),
             icon: <FaSprayCan size={40} />,
-            image: '/images/cleaning.jpg'
+            image: '/images/cleaning.webp'
         },
         {
             id: 5,
@@ -57,6 +80,70 @@ const Products = () => {
             description: t('products.categories.deck_equipment.description'),
             icon: <FaAnchor size={40} />,
             image: '/images/deck_equipment.jpg'
+        },
+        {
+            id: 6,
+            category: 'welding',
+            title: t('products.categories.welding.title'),
+            description: t('products.categories.welding.description'),
+            icon: <FaFire size={40} />,
+            image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80'
+        },
+        {
+            id: 7,
+            category: 'crane_service',
+            title: t('products.categories.crane_service.title'),
+            description: t('products.categories.crane_service.description'),
+            icon: <FaCogs size={40} />,
+            image: '/images/vinc.jpg'
+        },
+        {
+            id: 8,
+            category: 'manhole_covers',
+            title: t('products.categories.manhole_covers.title'),
+            description: t('products.categories.manhole_covers.description'),
+            icon: <FaIndustry size={40} />,
+            image: '/images/menhol.png'
+        },
+        {
+            id: 9,
+            category: 'ship_chemicals',
+            title: t('products.categories.ship_chemicals.title'),
+            description: t('products.categories.ship_chemicals.description'),
+            icon: <FaVials size={40} />,
+            image: '/images/chem.jpg'
+        },
+        {
+            id: 10,
+            category: 'hydraulic',
+            title: t('products.categories.hydraulic.title'),
+            description: t('products.categories.hydraulic.description'),
+            icon: <FaTint size={40} />,
+            image: '/images/hidrolik.jpeg'
+        },
+        {
+            id: 11,
+            category: 'valves_pipes',
+            title: t('products.categories.valves_pipes.title'),
+            description: t('products.categories.valves_pipes.description'),
+            icon: <FaProjectDiagram size={40} />,
+            image: '/images/valf.png'
+        },
+        {
+            id: 12,
+            category: 'electrical',
+            title: t('products.categories.electrical.title'),
+            description: t('products.categories.electrical.description'),
+            icon: <FaPlug size={40} />,
+            image: '/images/electric.jpg'
+        },
+        {
+            id: 13,
+            category: 'cnc_lathe',
+            title: t('products.categories.cnc_lathe.title'),
+            description: t('products.categories.cnc_lathe.description'),
+            icon: <FaDraftingCompass size={40} />,
+            image: '/images/torna.jpg'
         }
     ];
 
@@ -125,10 +212,6 @@ const Products = () => {
                                 <div className="product-content">
                                     <h3 className="product-title">{product.title}</h3>
                                     <p className="product-description">{product.description}</p>
-                                    <button className="product-link">
-                                        <FaWrench size={16} />
-                                        <span>{t('products.details')}</span>
-                                    </button>
                                 </div>
                             </motion.div>
                         ))}

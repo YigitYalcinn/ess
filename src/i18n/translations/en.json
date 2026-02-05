@@ -7,8 +7,8 @@
     },
     "hero": {
         "title": "Eray Ship Supply",
-        "subtitle": "Ship Supply & Hardware Solutions",
-        "description": "Based in the Tuzla district of Istanbul, our expert team specializes in ship supply, fasteners, and hardware. We are your trusted partner for all kinds of marine materials and technical equipment.",
+    "subtitle": "Ship Supply, Maintenance, Repair, Hardware, Logistics Solutions",
+    "description": "The One Address Where Quality Meets Service",
         "badge": "Premium Ship Supply",
         "scroll": "Scroll",
         "cta": "Contact Us"
@@ -40,8 +40,8 @@
         "note": "Askaynak, Baymax, Beybi, Bosch, Dewalt, İzeltaş, Ingco, Karbosan, Stanley, Starline and more..."
     },
     "products": {
-        "title": "Our Products",
-        "subtitle": "Ship Supply & Hardware Product Range",
+        "title": "Our Products and Services",
+        "subtitle": "Ship supply, maintenance, repair and technical service scope",
         "categories": {
             "fasteners": {
                 "title": "Fasteners",
@@ -62,6 +62,38 @@
             "deck_equipment": {
                 "title": "Deck Equipment",
                 "description": "Deck materials, marine equipment and ship fittings"
+            },
+            "welding": {
+                "title": "Welding Products",
+                "description": "Welding machines, consumables and application equipment"
+            },
+            "crane_service": {
+                "title": "Crane Repair, Overhaul & Maintenance",
+                "description": "Maintenance, troubleshooting and refurbishment for crane systems"
+            },
+            "manhole_covers": {
+                "title": "Manhole Cover Manufacturing",
+                "description": "Custom-size manhole covers and installation solutions"
+            },
+            "ship_chemicals": {
+                "title": "Ship Chemicals",
+                "description": "Marine chemicals for cleaning, maintenance and protection"
+            },
+            "hydraulic": {
+                "title": "Hydraulic Equipment",
+                "description": "Hydraulic pumps, hoses, fittings and accessories"
+            },
+            "valves_pipes": {
+                "title": "Valves, Pipes & Fittings",
+                "description": "Valve, pipe and fitting options in various sizes and types"
+            },
+            "electrical": {
+                "title": "Electrical Products",
+                "description": "Cables, sockets, panels and electrical consumables"
+            },
+            "cnc_lathe": {
+                "title": "Custom Lathe & CNC Works",
+                "description": "Custom part manufacturing and precision machining"
             }
         },
         "all": "All",

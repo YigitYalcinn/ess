@@ -38,21 +38,21 @@ const Hero = () => {
                 {t('seo.keywords')}
             </div>
             <div className="hero-background">
+                <video
+                    className="hero-video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-hidden="true"
+                >
+                    <source src="/images/bgvid.mp4" type="video/mp4" />
+                </video>
                 <div className="hero-pattern"></div>
             </div>
 
             <div className="container hero-content">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <div className="hero-badge hero-badge-premium">
-                        <span className="hero-badge-icon">★</span>
-                        <span className="hero-badge-text">{t('hero.badge')}</span>
-                    </div>
-                </motion.div>
-
                 <motion.h1
                     className="hero-title"
                     initial={{ opacity: 0, y: 30 }}
@@ -61,6 +61,15 @@ const Hero = () => {
                 >
                     {t('hero.title')}
                 </motion.h1>
+
+                <motion.h2
+                    className="hero-mobile-title"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                    {t('hero.title')}
+                </motion.h2>
 
                 <motion.h2
                     className="hero-subtitle"
@@ -120,3 +129,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
