@@ -118,6 +118,16 @@ create policy "admins can delete posts" on public.posts
   for delete to authenticated
   using (public.is_admin());
 
+-- ---------- Tablo izinleri ----------
+-- Supabase "tabloları otomatik aç" ayarı kapalıysa da çalışsın diye açıkça veriliyor.
+-- Asıl koruma yukarıdaki satır güvenliği (RLS) kurallarıdır.
+grant usage on schema public to anon, authenticated;
+grant select on public.posts to anon, authenticated;
+grant insert, update, delete on public.posts to authenticated;
+grant select on public.admins to authenticated;
+revoke insert, update, delete on public.admins from anon, authenticated;
+grant execute on function public.is_admin() to anon, authenticated;
+
 -- ---------- Görsel deposu ----------
 insert into storage.buckets (id, name, public)
 values ('blog-images', 'blog-images', true)
