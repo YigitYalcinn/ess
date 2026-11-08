@@ -196,7 +196,7 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
     }
     setForm((f) => ({ ...f, ...current, published_at: data.published_at, status: data.status }));
     setDirty(false);
-    setMsg({ type: 'ok', text: status === 'published' ? 'Yayınlandı! Sitede birkaç saniye içinde görünür.' : 'Taslak kaydedildi.' });
+    setMsg({ type: 'ok', text: status === 'published' ? 'Yayınlandı! Sitede en geç 1-2 dakika içinde görünür.' : 'Taslak kaydedildi.' });
     if (!id && onSaved) onSaved(data.id);
   };
 
