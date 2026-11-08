@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/blog", "destination": "/api/blog?lang=tr" },
+    { "source": "/blog/:slug", "destination": "/api/blog?lang=tr&slug=:slug" },
+    { "source": "/en/blog", "destination": "/api/blog?lang=en" },
+    { "source": "/en/blog/:slug", "destination": "/api/blog?lang=en&slug=:slug" },
+    { "source": "/ru/blog", "destination": "/api/blog?lang=ru" },
+    { "source": "/ru/blog/:slug", "destination": "/api/blog?lang=ru&slug=:slug" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/admin/:path*", "destination": "/admin.html" }
+  ],
+  "headers": [
+    {
+      "source": "/admin(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "X-Frame-Options", "value": "DENY" }
+      ]
+    }
+  ]
+}

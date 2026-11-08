@@ -26,4 +26,9 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
+  {
+    // Vercel sunucu fonksiyonları Node.js'te çalışır
+    files: ['api/**/*.js'],
+    languageOptions: { globals: globals.node },
+  },
 ])

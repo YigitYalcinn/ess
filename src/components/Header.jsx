@@ -33,6 +33,8 @@ const Header = () => {
         document.documentElement.lang = lang;
     };
 
+    const blogHref = i18n.language === 'tr' ? '/blog' : `/${i18n.language}/blog`;
+
     return (
         <motion.header
             className={`header ${scrolled ? 'scrolled' : ''}`}
@@ -50,6 +52,7 @@ const Header = () => {
                     <a onClick={() => scrollToSection('home')}>{t('nav.home')}</a>
                     <a onClick={() => scrollToSection('about')}>{t('nav.about')}</a>
                     <a onClick={() => scrollToSection('products')}>{t('nav.products')}</a>
+                    <a href={blogHref}>{t('nav.blog')}</a>
                     <a onClick={() => scrollToSection('contact')}>{t('nav.contact')}</a>
                 </nav>
 

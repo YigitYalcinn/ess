@@ -85,7 +85,7 @@ const SEO = () => {
                         "@context": "https://schema.org",
                         "@type": "LocalBusiness",
                         "name": "Eray Ship Supply",
-                        "image": "https://www.erayshipsupply.com/logo.png",
+                        "image": "https://www.erayshipsupply.com/brands/eray-logo.png",
                         "description": currentSEO.description,
                         "address": {
                             "@type": "PostalAddress",
