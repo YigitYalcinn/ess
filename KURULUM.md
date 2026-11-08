@@ -43,17 +43,19 @@ Ziyaretçi / Google ──► /blog, /en/blog, /ru/blog  (Vercel sunucuda hazır
    Kendine de hesap açmak istersen aynı iki adımı kendi e-postanla tekrarla.
 3. Arkadaşın ilk girişten sonra sağ üstteki **"Şifre değiştir"** ile kendi şifresini belirlesin.
 
-## 3. Çeviri anahtarı al (birini seç)
+## 3. Claude API anahtarı al (otomatik çeviri için)
 
-**Seçenek A: DeepL (önerilen, ücretsiz başlangıç)**
-- https://www.deepl.com/pro-api adresinden **DeepL API Free** hesabı aç. Ayda 500.000 karakter ücretsiz, bu da kabaca 50-80 yazı eder.
-- Kart bilgisi istiyor ama Free planda ücret kesmiyor.
-- **Account → API Keys** bölümünden anahtarı kopyala (sonu `:fx` ile biter).
+Panelde "EN + RU çevir" butonuna basınca yazı Claude'a gönderilir ve çevrilir.
 
-**Seçenek B: Claude API**
-- https://console.anthropic.com adresinden anahtar al. Ücretlidir (yazı başına birkaç sent), ama denizcilik terimlerini ve SEO metinlerini daha doğal çevirir.
+1. https://console.anthropic.com adresinden hesap aç.
+2. **Billing** bölümünden kart ekleyip **5 $ kredi** yükle. Kullandıkça düşer, abonelik değildir.
+   Bir blog yazısının iki dile çevirisi yaklaşık **0,05-0,15 $** tutar, yani 5 $ onlarca yazıya yeter.
+3. **Billing → Limits** bölümünden aylık harcama limiti koy (örn. 5 $). Böylece sürpriz fatura çıkmaz.
+4. **API Keys → Create Key** ile anahtar oluştur (`sk-ant-...`). Anahtar sadece bir kez gösterilir, kopyala.
 
-İkisi birden tanımlıysa DeepL kullanılır.
+> claude.ai'daki Pro/Max aboneliği bu anahtarı **kapsamaz**. API ayrı ücretlendirilir.
+> Anahtar girilmezse panel yine çalışır: EN/RU sekmelerinde "Elle yaz" ile çeviriler elle girilebilir.
+> İstersen Claude yerine `DEEPL_API_KEY` (DeepL Free, ücretsiz) de kullanılabilir. İkisi birden varsa Claude kullanılır.
 
 ## 4. Vercel ortam değişkenleri
 
@@ -66,8 +68,7 @@ Vercel → proje → **Settings → Environment Variables**. Hepsini **Productio
 | `SUPABASE_URL` | yukarıdaki URL'nin aynısı | |
 | `SUPABASE_ANON_KEY` | yukarıdaki anon key'in aynısı | |
 | `SITE_URL` | `https://www.erayshipsupply.com` | |
-| `DEEPL_API_KEY` | `xxxx:fx` | 3. adım (A) |
-| `ANTHROPIC_API_KEY` | `sk-ant-...` | 3. adım (B), DeepL kullanıyorsan gerek yok |
+| `ANTHROPIC_API_KEY` | `sk-ant-...` | 3. adım |
 
 > ⚠️ **service_role** anahtarını ASLA buraya koyma. Bu sistem sadece anon key ile çalışır, güvenliği veritabanı kuralları sağlar.
 
@@ -87,7 +88,7 @@ Değişkenleri ekledikten sonra **Deployments → en son deploy → Redeploy** y
 ## Bilinmesi gerekenler
 
 - **Supabase ücretsiz planı**, projede 7 gün boyunca hiç hareket olmazsa projeyi duraklatabiliyor. Blogda ziyaretçi trafiği oldukça bu genelde sorun olmaz, ama blog bir süre "Sayfa bulunamadı" gösterirse ilk bakılacak yer Supabase paneli: oradan tek tıkla geri açılıyor.
-- **Otomatik çeviri kusursuz değildir.** Özellikle teknik terimlerde (cıvata sınıfları, ürün adları) EN/RU sekmelerine kısaca göz atmak iyi olur.
+- **Otomatik çeviri iyi ama kusursuz değildir.** Özellikle teknik terimlerde (cıvata sınıfları, ürün adları) EN/RU sekmelerine kısaca göz atmak iyi olur.
 - **Yayındaki bir yazının URL'sini değiştirmek** eski linkleri bozar. Panel bu konuda uyarı gösteriyor.
 - Panel adresi (`/admin`) arama motorlarına kapalıdır (`noindex` ve robots.txt).
 
@@ -98,7 +99,7 @@ Değişkenleri ekledikten sonra **Deployments → en son deploy → Redeploy** y
 | `supabase/schema.sql` | Veritabanı, güvenlik kuralları, görsel klasörü |
 | `api/blog.js` | Blog liste ve yazı sayfaları (sunucuda HTML) |
 | `api/sitemap.js` | `/sitemap.xml` |
-| `api/translate.js` | Otomatik çeviri (sadece yetkili kullanıcılar) |
+| `api/translate.js` | Claude ile otomatik çeviri (sadece yetkili kullanıcılar) |
 | `api/_lib/*` | Ortak kod: sayfa şablonu, metinler, veritabanı okuma, slug |
 | `public/blog.css` | Blog sayfalarının tasarımı |
 | `admin.html`, `src/admin/*` | Yönetim paneli |

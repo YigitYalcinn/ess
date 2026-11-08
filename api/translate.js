@@ -2,8 +2,8 @@
 // Sadece giriş yapmış ve admins tablosunda olan kullanıcılar kullanabilir.
 //
 // Sağlayıcı seçimi (Vercel ortam değişkenleri):
-//   DEEPL_API_KEY      varsa DeepL kullanılır (ücretsiz planda ayda 500.000 karakter)
-//   ANTHROPIC_API_KEY  DeepL yoksa Claude kullanılır (ANTHROPIC_MODEL ile model değiştirilebilir)
+//   ANTHROPIC_API_KEY  varsa Claude kullanılır (varsayılan; ANTHROPIC_MODEL ile model değiştirilebilir)
+//   DEEPL_API_KEY      Claude anahtarı yoksa DeepL kullanılır (yedek seçenek)
 
 import { slugify } from './_lib/slug.js';
 
@@ -151,9 +151,9 @@ export default async function handler(req, res) {
     if ((src.content || '').length > MAX_CONTENT_CHARS) return json(res, 413, { error: 'Yazı çeviri için çok uzun' });
 
     let result;
-    if (process.env.DEEPL_API_KEY) result = await translateWithDeepL(process.env.DEEPL_API_KEY, src);
-    else if (process.env.ANTHROPIC_API_KEY) result = await translateWithClaude(process.env.ANTHROPIC_API_KEY, src);
-    else return json(res, 500, { error: 'Çeviri anahtarı tanımlı değil (DEEPL_API_KEY veya ANTHROPIC_API_KEY)' });
+    if (process.env.ANTHROPIC_API_KEY) result = await translateWithClaude(process.env.ANTHROPIC_API_KEY, src);
+    else if (process.env.DEEPL_API_KEY) result = await translateWithDeepL(process.env.DEEPL_API_KEY, src);
+    else return json(res, 503, { error: 'Çeviri anahtarı tanımlı değil (ANTHROPIC_API_KEY). EN/RU sekmelerini elle doldurabilirsiniz.' });
 
     for (const l of TARGETS) {
       result[l] = result[l] || {};

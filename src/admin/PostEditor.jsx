@@ -67,6 +67,7 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
   const [busy, setBusy] = useState('');
   const [msg, setMsg] = useState(null);
   const [dirty, setDirty] = useState(false);
+  const [manual, setManual] = useState({ en: false, ru: false }); // çeviri yerine elle yazılıyor
   const [stale, setStale] = useState(false); // TR çeviriden sonra değişti mi
   const slugTouched = useRef({ tr: Boolean(id), en: Boolean(id), ru: Boolean(id) });
 
@@ -150,11 +151,11 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
     if (!current.title_tr.trim()) { setTab('tr'); setMsg({ type: 'error', text: 'Türkçe başlık zorunlu.' }); return; }
     if (!current.slug_tr) current.slug_tr = slugify(current.title_tr);
 
-    // Yayınlarken çeviri yoksa otomatik çevir
+    // Yayınlarken çeviri yoksa otomatik çevir; çeviri yapılamazsa sadece dolu dillerde yayınla
     if (status === 'published' && (!current.title_en || !current.title_ru)) {
       const translated = await translate(current, { ask: false });
-      if (!translated) return;
-      current = { ...translated, status };
+      if (translated) current = { ...translated, status };
+      else if (!window.confirm('Otomatik çeviri yapılamadı. Yazı sadece doldurulmuş dillerde yayınlansın mı?')) return;
     }
 
     for (const l of LANGS) {
@@ -269,18 +270,21 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
         ))}
       </div>
 
-      {!isTr && !form[`title_${l}`] && (
+      {!isTr && !form[`title_${l}`] && !manual[l] && (
         <div className="a-card a-empty">
           <p>Bu dilde henüz çeviri yok. Türkçe yazıyı bitirdikten sonra çevirin. Yayınla’ya bastığınızda da otomatik çevrilir.</p>
-          <button className="a-btn" onClick={() => translate()} disabled={Boolean(busy)}>🌐 EN + RU çevir</button>
+          <div className="a-actions" style={{ justifyContent: 'center' }}>
+            <button className="a-btn" onClick={() => translate()} disabled={Boolean(busy)}>🌐 EN + RU çevir</button>
+            <button className="a-btn a-btn-ghost" onClick={() => setManual((m) => ({ ...m, [l]: true }))}>Elle yaz</button>
+          </div>
         </div>
       )}
 
-      {(isTr || form[`title_${l}`]) && (
+      {(isTr || form[`title_${l}`] || manual[l]) && (
         <div className="a-grid">
           <div className="a-col-main">
             <div className="a-card">
-              {!isTr && <p className="a-note">Otomatik çeviri. Göz atıp gerekirse düzeltin, özellikle teknik terimleri.</p>}
+              {!isTr && <p className="a-note">Otomatik çeviriyi kontrol edip gerekirse düzeltebilirsiniz. Bu sekme boş kalırsa yazı bu dilde yayınlanmaz.</p>}
               <label className="a-field">
                 <span>Başlık {isTr && <em>*</em>}</span>
                 <input className="a-input-lg" value={form[`title_${l}`]} onChange={(e) => set(`title_${l}`, e.target.value)}
