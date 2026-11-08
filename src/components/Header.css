@@ -54,6 +54,14 @@
     color: var(--color-gold);
     letter-spacing: 0.02em;
     text-shadow: 0 0 20px rgba(201, 169, 97, 0.3);
+    white-space: nowrap;
+}
+
+/* Blog linki eklenince menü 5 öğe oldu: orta genişlikte aralıkları daralt */
+@media (max-width: 1360px) {
+    .header-content { gap: var(--spacing-lg); }
+    .nav { gap: var(--spacing-lg); }
+    .logo-text { font-size: var(--font-size-xl); }
 }
 
 .nav {
@@ -72,6 +80,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 0.5rem 0;
+    white-space: nowrap;
 }
 
 .nav a::after {
