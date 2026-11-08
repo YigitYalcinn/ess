@@ -6,7 +6,7 @@ Bu rehber, blogu canlıya almak için **bir kere** yapılacak adımları anlatı
 
 ```
 SEO'cu arkadaş ──► erayshipsupply.com/admin  (e-posta + şifre ile giriş)
-                     │  Türkçe yazar → "EN + RU çevir" → kontrol eder → "Yayınla"
+                     │  Türkçe yazar → EN/RU çevirilerini yapıştırır → "Yayınla"
                      ▼
                  Supabase (veritabanı + görseller)
                      ▲
@@ -28,34 +28,31 @@ Ziyaretçi / Google ──► /blog, /en/blog, /ru/blog  (Vercel sunucuda hazır
    - Bu adım tabloları, güvenlik kurallarını ve `blog-images` görsel klasörünü oluşturur.
 3. **Authentication → Sign In / Providers** (ya da **Settings**) bölümünde **"Allow new users to sign up"** seçeneğini **KAPAT**. Böylece kimse kendi kendine hesap açamaz.
 4. **Authentication → URL Configuration** bölümünde:
-   - Site URL: `https://www.erayshipsupply.com`
+   - Site URL: `https://www.erayshipsupply.com/admin` (sonunda `/admin` olmalı: davet ve şifre sıfırlama e-postaları buraya yönlenir)
    - Redirect URLs listesine şunu ekle: `https://www.erayshipsupply.com/admin`
 
-## 2. SEO'cu arkadaşın hesabını oluştur
+## 2. SEO'cu arkadaşı davet et
 
-1. **Authentication → Users → Add user → Create new user**
-   - E-postasını ve geçici bir şifre gir, **Auto Confirm User** kutusunu işaretle.
-2. **SQL Editor**'de şunu çalıştır (e-postayı değiştir):
+Arkadaşının sadece **e-posta adresi** gerekiyor. Şifresini o kendisi belirler, sen hiç bilmezsin.
+
+1. **Authentication → Users → Add user → Send invitation** (ya da "Invite user"). Arkadaşının e-postasını gir.
+2. Hemen ardından **SQL Editor**'de şunu çalıştır (e-postayı değiştir):
    ```sql
    insert into public.admins (user_id)
    select id from auth.users where email = 'arkadasin@mail.com';
    ```
-   Kendine de hesap açmak istersen aynı iki adımı kendi e-postanla tekrarla.
-3. Arkadaşın ilk girişten sonra sağ üstteki **"Şifre değiştir"** ile kendi şifresini belirlesin.
+   Bu adım olmadan arkadaşın giriş yapabilir ama "Yetki yok" ekranı görür.
+3. Arkadaşına gelen e-postadaki linke tıklar, panel açılır ve **"Yeni şifre"** ekranında kendi şifresini belirler. Sonraki girişlerde `erayshipsupply.com/admin` adresinden e-posta ve şifresiyle girer.
+   - E-posta gelmezse **spam klasörüne** baksın. Supabase'in ücretsiz e-posta servisi saatte birkaç e-postayla sınırlı ve bazen spam'e düşüyor.
+   - Hiç gelmezse plan B: **Add user → Create new user** ile geçici bir şifre koy (**Auto Confirm User** işaretli), şifreyi ona ilet, o da girince sağ üstten **"Şifre değiştir"** desin.
 
-## 3. Claude API anahtarı al (otomatik çeviri için)
+Kendine de hesap açmak istersen aynı adımları kendi e-postanla tekrarla.
 
-Panelde "EN + RU çevir" butonuna basınca yazı Claude'a gönderilir ve çevrilir.
+## 3. Çeviriler (şimdilik elle)
 
-1. https://console.anthropic.com adresinden hesap aç.
-2. **Billing** bölümünden kart ekleyip **5 $ kredi** yükle. Kullandıkça düşer, abonelik değildir.
-   Bir blog yazısının iki dile çevirisi yaklaşık **0,05-0,15 $** tutar, yani 5 $ onlarca yazıya yeter.
-3. **Billing → Limits** bölümünden aylık harcama limiti koy (örn. 5 $). Böylece sürpriz fatura çıkmaz.
-4. **API Keys → Create Key** ile anahtar oluştur (`sk-ant-...`). Anahtar sadece bir kez gösterilir, kopyala.
+Panelde **TR / EN / RU** sekmeleri var. Türkçe zorunlu. EN ve RU sekmelerine çeviriler elle yazılır veya yapıştırılır. Boş bırakılan dilde yazı yayınlanmaz, diğer dillerde görünür.
 
-> claude.ai'daki Pro/Max aboneliği bu anahtarı **kapsamaz**. API ayrı ücretlendirilir.
-> Anahtar girilmezse panel yine çalışır: EN/RU sekmelerinde "Elle yaz" ile çeviriler elle girilebilir.
-> İstersen Claude yerine `DEEPL_API_KEY` (DeepL Free, ücretsiz) de kullanılabilir. İkisi birden varsa Claude kullanılır.
+**İleride otomatik çeviri istersen:** kod hazır. Vercel'e `ANTHROPIC_API_KEY` (console.anthropic.com, ücretli, yazı başına birkaç sent) ya da `DEEPL_API_KEY` (DeepL API Free, ücretsiz) ve `VITE_TRANSLATION` = `on` ekleyip yeniden deploy etmen yeterli. Panelde "EN + RU çevir" butonu belirir.
 
 ## 4. Vercel ortam değişkenleri
 
@@ -68,7 +65,6 @@ Vercel → proje → **Settings → Environment Variables**. Hepsini **Productio
 | `SUPABASE_URL` | yukarıdaki URL'nin aynısı | |
 | `SUPABASE_ANON_KEY` | yukarıdaki anon key'in aynısı | |
 | `SITE_URL` | `https://www.erayshipsupply.com` | |
-| `ANTHROPIC_API_KEY` | `sk-ant-...` | 3. adım |
 
 > ⚠️ **service_role** anahtarını ASLA buraya koyma. Bu sistem sadece anon key ile çalışır, güvenliği veritabanı kuralları sağlar.
 
@@ -78,7 +74,7 @@ Değişkenleri ekledikten sonra **Deployments → en son deploy → Redeploy** y
 
 - [ ] `https://www.erayshipsupply.com/admin` adresinde giriş ekranı açılıyor
 - [ ] Arkadaşın hesabıyla giriş yapılabiliyor
-- [ ] Deneme yazısı → "EN + RU çevir" → çeviriler geliyor
+- [ ] Deneme yazısı TR + EN + RU olarak yazılıp yayınlanabiliyor
 - [ ] "Yayınla" sonrası `/blog`, `/en/blog`, `/ru/blog` sayfalarında yazı görünüyor
 - [ ] `https://www.erayshipsupply.com/sitemap.xml` açılıyor
 - [ ] Google Search Console'a sitemap gönderildi (SEO'cu arkadaş yapar)
@@ -88,7 +84,6 @@ Değişkenleri ekledikten sonra **Deployments → en son deploy → Redeploy** y
 ## Bilinmesi gerekenler
 
 - **Supabase ücretsiz planı**, projede 7 gün boyunca hiç hareket olmazsa projeyi duraklatabiliyor. Blogda ziyaretçi trafiği oldukça bu genelde sorun olmaz, ama blog bir süre "Sayfa bulunamadı" gösterirse ilk bakılacak yer Supabase paneli: oradan tek tıkla geri açılıyor.
-- **Otomatik çeviri iyi ama kusursuz değildir.** Özellikle teknik terimlerde (cıvata sınıfları, ürün adları) EN/RU sekmelerine kısaca göz atmak iyi olur.
 - **Yayındaki bir yazının URL'sini değiştirmek** eski linkleri bozar. Panel bu konuda uyarı gösteriyor.
 - Panel adresi (`/admin`) arama motorlarına kapalıdır (`noindex` ve robots.txt).
 

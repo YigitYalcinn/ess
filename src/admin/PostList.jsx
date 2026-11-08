@@ -39,7 +39,7 @@ export default function PostList({ onNew, onEdit }) {
       <div className="a-page-head">
         <div>
           <h1 className="a-h1">Yazılar</h1>
-          <p className="a-muted">Türkçe yazın, tek tıkla İngilizce ve Rusçaya çevirin.</p>
+          <p className="a-muted">Türkçe zorunlu. İngilizce ve Rusça sekmeleri doluysa yazı o dillerde de yayınlanır.</p>
         </div>
         <button className="a-btn" onClick={onNew}>+ Yeni yazı</button>
       </div>

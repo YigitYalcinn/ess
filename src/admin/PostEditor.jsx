@@ -8,6 +8,8 @@ const LANGS = ['tr', 'en', 'ru'];
 const LANG_LABEL = { tr: 'Türkçe', en: 'English', ru: 'Русский' };
 const FIELDS = ['slug', 'title', 'excerpt', 'meta_title', 'meta_desc', 'content'];
 const SITE = 'erayshipsupply.com';
+// Otomatik çeviri sadece Vercel'de VITE_TRANSLATION=on ve bir çeviri anahtarı tanımlıysa görünür
+const TRANSLATE_ENABLED = import.meta.env.VITE_TRANSLATION === 'on';
 
 const emptyForm = () => {
   const f = { status: 'draft', cover_url: '', published_at: null };
@@ -152,7 +154,7 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
     if (!current.slug_tr) current.slug_tr = slugify(current.title_tr);
 
     // Yayınlarken çeviri yoksa otomatik çevir; çeviri yapılamazsa sadece dolu dillerde yayınla
-    if (status === 'published' && (!current.title_en || !current.title_ru)) {
+    if (TRANSLATE_ENABLED && status === 'published' && (!current.title_en || !current.title_ru)) {
       const translated = await translate(current, { ask: false });
       if (translated) current = { ...translated, status };
       else if (!window.confirm('Otomatik çeviri yapılamadı. Yazı sadece doldurulmuş dillerde yayınlansın mı?')) return;
@@ -237,9 +239,9 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
         </div>
         <div className="a-actions">
           {publicUrl && <a className="a-btn a-btn-ghost" href={publicUrl} target="_blank" rel="noreferrer">Sitede gör ↗</a>}
-          <button className="a-btn a-btn-ghost" onClick={() => translate()} disabled={Boolean(busy)}>
+          {TRANSLATE_ENABLED && <button className="a-btn a-btn-ghost" onClick={() => translate()} disabled={Boolean(busy)}>
             {busy === 'translate' ? 'Çevriliyor…' : hasTranslations ? '↻ Yeniden çevir' : '🌐 EN + RU çevir'}
-          </button>
+          </button>}
           {form.status === 'published' ? (
             <>
               <button className="a-btn a-btn-ghost" onClick={unpublish} disabled={Boolean(busy)}>Yayından kaldır</button>
@@ -270,7 +272,7 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
         ))}
       </div>
 
-      {!isTr && !form[`title_${l}`] && !manual[l] && (
+      {TRANSLATE_ENABLED && !isTr && !form[`title_${l}`] && !manual[l] && (
         <div className="a-card a-empty">
           <p>Bu dilde henüz çeviri yok. Türkçe yazıyı bitirdikten sonra çevirin. Yayınla’ya bastığınızda da otomatik çevrilir.</p>
           <div className="a-actions" style={{ justifyContent: 'center' }}>
@@ -280,11 +282,18 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
         </div>
       )}
 
-      {(isTr || form[`title_${l}`] || manual[l]) && (
+      {(isTr || !TRANSLATE_ENABLED || form[`title_${l}`] || manual[l]) && (
         <div className="a-grid">
           <div className="a-col-main">
             <div className="a-card">
-              {!isTr && <p className="a-note">Otomatik çeviriyi kontrol edip gerekirse düzeltebilirsiniz. Bu sekme boş kalırsa yazı bu dilde yayınlanmaz.</p>}
+              {!isTr && (
+                <p className="a-note">
+                  {TRANSLATE_ENABLED
+                    ? 'Otomatik çeviriyi kontrol edip gerekirse düzeltebilirsiniz. '
+                    : `${LANG_LABEL[l]} çevirisini buraya yazın veya yapıştırın. `}
+                  Bu sekme boş kalırsa yazı bu dilde yayınlanmaz, diğer dillerde görünmeye devam eder.
+                </p>
+              )}
               <label className="a-field">
                 <span>Başlık {isTr && <em>*</em>}</span>
                 <input className="a-input-lg" value={form[`title_${l}`]} onChange={(e) => set(`title_${l}`, e.target.value)}
@@ -310,7 +319,7 @@ export default function PostEditor({ id, onDone, onSaved, userId }) {
                 key={l}
                 value={form[`content_${l}`]}
                 onChange={(html) => set(`content_${l}`, html)}
-                placeholder={isTr ? 'Yazınızı buraya yazın. Bölümleri H2 / H3 ara başlıklarla ayırın.' : ''}
+                placeholder={isTr ? 'Yazınızı buraya yazın. Bölümleri H2 / H3 ara başlıklarla ayırın.' : `${LANG_LABEL[l]} metni…`}
               />
             </div>
           </div>

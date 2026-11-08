@@ -21,7 +21,8 @@ function useHashRoute() {
 export default function App() {
   const [session, setSession] = useState(undefined); // undefined = yükleniyor
   const [adminCheck, setAdminCheck] = useState({ uid: null, ok: false });
-  const [recovery, setRecovery] = useState(false);
+  // Davet veya şifre sıfırlama e-postasındaki linkle gelindiyse önce şifre belirlet
+  const [recovery, setRecovery] = useState(() => /type=(invite|recovery)/.test(window.location.hash));
   const [route, go] = useHashRoute();
 
   useEffect(() => {
